@@ -1,0 +1,241 @@
+/* Testimonials.css */
+
+#testimonials {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #2d3748, #1a202c);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+#testimonials::before,
+#testimonials::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.15), transparent);
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+#testimonials::before {
+  top: -100px;
+  left: -100px;
+  filter: blur(50px);
+}
+
+#testimonials::after {
+  bottom: -100px;
+  right: -100px;
+  filter: blur(50px);
+}
+
+#testimonials .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+#testimonials h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: inline-block;
+}
+
+#testimonials h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #a78bfa, #b39ddb);
+  border-radius: 2px;
+}
+
+#testimonials .grid {
+  display: flex; /* Change to flexbox */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center horizontally */
+  gap: 2rem; /* Reduced gap */
+}
+
+#testimonials .grid > div {
+  background: linear-gradient(145deg, #374151, #4a5568);
+  padding: 3rem;
+  border-radius: 1rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+  width: calc(33.33% - 2rem); /* Make them fill the width, adjust gap */
+  flex-grow: 1; /* Allow them to grow */
+  flex-shrink: 1; /* Allow them to shrink */
+  min-width: 300px; /* Minimum width */
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(2deg) rotateX(1deg);
+  }
+}
+
+#testimonials .grid > div:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+#testimonials img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  object-fit: cover;
+  border: 3px solid #a78bfa;
+  transition: transform 0.3s ease;
+}
+
+#testimonials img:hover {
+  transform: scale(1.1);
+}
+
+#testimonials h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
+  letter-spacing: 0.08rem;
+}
+
+#testimonials p {
+  color: #cbd5e0;
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+#testimonials p:last-child {
+  font-style: italic;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#testimonials .grid > div {
+  animation: slideUp 0.7s ease forwards, float 6s ease-in-out infinite;
+  opacity: 0;
+}
+
+#testimonials .grid > div:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+#testimonials .grid > div:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+#testimonials .grid > div:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+#testimonials h2 {
+  animation: slideUp 0.6s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+/* More Styling */
+#testimonials .grid > div:nth-child(even) {
+  background: linear-gradient(145deg, #4a5568, #374151);
+}
+
+#testimonials .grid > div:nth-child(2) {
+  transform: scale(1.03);
+}
+
+#testimonials .grid > div:nth-child(2):hover {
+  transform: scale(1.06) translateY(-10px);
+}
+
+#testimonials h3 {
+  transition: color 0.3s ease;
+}
+
+#testimonials .grid > div:hover h3 {
+  color: #b39ddb;
+}
+
+#testimonials p {
+  transition: opacity 0.3s ease;
+}
+
+#testimonials .grid > div:hover p {
+  opacity: 1;
+}
+
+#testimonials .grid > div:active {
+  transform: scale(0.97);
+}
+
+#testimonials .grid > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+#testimonials .grid > div:hover::before {
+  opacity: 1;
+}
+
+#testimonials .grid > div::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #a78bfa, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+#testimonials .grid > div:hover::after {
+  transform: scaleX(1);
+}

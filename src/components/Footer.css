@@ -1,0 +1,92 @@
+/* Footer.css */
+
+footer {
+  background-color: #1a202c; /* bg-gray-900 */
+  padding: 3rem 0; /* py-12 */
+  color: white;
+  text-align: center;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+footer h2 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+footer p:first-of-type {
+  color: #a0aec0; /* text-gray-400 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+footer .flex {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* space-x-6 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+footer a {
+  color: #a78bfa; /* text-purple-500 */
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #9370db; /* hover:text-purple-400 */
+}
+
+footer svg {
+  font-size: 1.5rem; /* size={24} */
+}
+
+footer p:last-of-type {
+  color: #9ca3af; /* text-gray-500 */
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* More Styling */
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer h2 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+footer a {
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+footer a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+footer p:last-of-type {
+  letter-spacing: 0.05rem;
+  font-weight: 300;
+}

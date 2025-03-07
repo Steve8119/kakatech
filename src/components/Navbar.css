@@ -1,0 +1,136 @@
+/* Navbar.css */
+
+nav {
+    background-color: #2d3748; /* Dark gray background */
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin: 0 1rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #a3bffa; /* Light purple hover */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem; /* Equivalent to text-2xl */
+  }
+  
+  .font-bold {
+    font-weight: 700; /* Equivalent to font-bold */
+  }
+  
+  .text-purple-500 {
+    color: #a3bffa; /* Light purple color */
+  }
+  
+  .md\:ml-auto {
+    margin-left: auto; /* Equivalent to md:ml-auto */
+  }
+  
+  .md\:flex {
+    display: flex; /* Equivalent to md:flex */
+  }
+  
+  .md\:hidden {
+    display: none; /* Equivalent to md:hidden */
+  }
+  
+  .space-x-6 > * + * {
+    margin-left: 1.5rem; /* Equivalent to space-x-6 */
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  .top-16 {
+    top: 4rem; /* Equivalent to top-16 */
+  }
+  
+  .left-0 {
+    left: 0;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .bg-gray-900 {
+    background-color: #1a202c; /* Darker gray background */
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .md\:hidden {
+    display: none;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem; /* Equivalent to space-y-4 */
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width: 768px) { /* md breakpoint */
+    .md\:flex {
+      display: flex;
+    }
+    .md\:hidden {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 767px) { /* Below md breakpoint */
+    .nav-links.md\:flex {
+      display: none;
+    }
+  
+    .md\:ml-auto{
+      margin-left: 0;
+    }
+  
+    .mobile-menu {
+      display: block;
+    }
+  }

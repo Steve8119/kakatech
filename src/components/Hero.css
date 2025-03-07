@@ -123,50 +123,51 @@
       font-size: 42px;
   }
   .hero-subtitle {
-      font-size: 20px;
-  }
-  .hero-services {
-      flex-wrap: wrap;
-  }
-  .hero-service {
-      width: 45%;
-  }
+    font-size: 20px;
+}
+.hero-services {
+    flex-wrap: wrap;
+}
+.hero-service {
+    width: 45%; /* Adjusted width for medium screens */
+    margin-bottom: 15px; /* Added margin for spacing */
+}
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-      font-size: 35px;
-  }
-  .hero-subtitle {
-      font-size: 18px;
-  }
-  .hero-services {
-      flex-direction: column;
-      align-items: center;
-  }
-  .hero-service {
-      width: 80%;
-      margin-bottom: 15px;
-  }
-  .hero-button {
-      padding: 12px 28px;
-      font-size: 18px;
-  }
+.hero-title {
+    font-size: 35px; /* Smaller title for mobile */
+}
+.hero-subtitle {
+    font-size: 18px; /* Smaller subtitle for mobile */
+}
+.hero-services {
+    flex-direction: column; /* Stack services vertically */
+    align-items: center; /* Center align services */
+}
+.hero-service {
+    width: 80%; /* Full width for mobile */
+    margin-bottom: 15px; /* Spacing between services */
+}
+.hero-button {
+    padding: 12px 28px; /* Adjust button padding for mobile */
+    font-size: 18px; /* Smaller button text */
+}
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-      font-size: 28px;
-  }
-  .hero-subtitle {
-      font-size: 16px;
-  }
-  .hero-service {
-      width: 90%;
-      padding: 15px;
-  }
-  .hero-button {
-      padding: 10px 24px;
-      font-size: 16px;
-  }
+.hero-title {
+    font-size: 28px; /* Smaller title for very small screens */
+}
+.hero-subtitle {
+    font-size: 16px; /* Smaller subtitle for very small screens */
+}
+.hero-service {
+    width: 90%; /* Almost full width for very small screens */
+    padding: 15px; /* Adjust padding for smaller screens */
+}
+.hero-button {
+    padding: 10px 24px; /* Smaller button padding */
+    font-size: 16px; /* Smaller button text */
+}
 }

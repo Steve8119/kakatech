@@ -1,182 +1,407 @@
 /* Hero.css */
 
 .hero-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative; /* Add this for positioning the pseudo-elements */
+  overflow: hidden; /* Add this to prevent the pseudo-elements from overflowing */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Add a dark overlay */
+  z-index: -1; /* Place the overlay behind the content */
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-services {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.hero-service {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-service i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-service h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-service p {
+  font-size: 1rem;
+}
+
+.hero-button {
+  background-color: #a78bfa;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-button:hover {
+  background-color: #b39ddb;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Background Image Animation */
+.hero-section {
+  animation: slideBackground 20s linear infinite;
+}
+
+@keyframes slideBackground {
+  0% {
+    background-image: url('../assets/1 (1).jpg');
   }
-  
-  .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(233, 227, 227, 0.6), rgba(0, 0, 0, 0.8));
-    z-index: 1;
+  25% {
+    background-image: url('../assets/1 (2).jpg');
   }
-  
-  .hero-content {
-    max-width: 800px;
-    width: 100%;
-    position: relative;
-    z-index: 10;
+  50% {
+    background-image: url('../assets/1 (3).jpg');
   }
-  
-  .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    animation: fadeInTitle 1.5s ease-out;
+  75% {
+    background-image: url('../assets/1 (4).jpg');
   }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    line-height: 1.6;
-    animation: fadeInSubtitle 2s ease-out;
+  100% {
+    background-image: url('../assets/1 (5).jpg');
   }
-  
-  .hero-services {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-    animation: fadeInServices 2.5s ease-out;
+}
+
+/* Add more keyframes for smoother transitions */
+@keyframes slideBackground {
+  0% {
+    background-image: url('../assets/1 (1).jpg');
   }
-  
-  .hero-service {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  12.5% {
+    background-image: url('../assets/1 (1).jpg'); /* Hold the first image for a bit */
   }
-  
-  .hero-service:hover {
+  25% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  37.5% {
+    background-image: url('../assets/1 (2).jpg'); /* Hold the second image */
+  }
+  50% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  62.5% {
+    background-image: url('../assets/1 (3).jpg'); /* Hold the third image */
+  }
+  75% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  87.5% {
+    background-image: url('../assets/1 (4).jpg'); /* Hold the fourth image */
+  }
+  100% {
+    background-image: url('../assets/1 (5).jpg');
+  }
+}
+
+/* Add even more keyframes for even smoother transitions */
+@keyframes slideBackground {
+  0% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  6.25% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  12.5% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  18.75% {
+    background-image: url('../assets/1 (1).jpg'); /* Hold the first image for a bit */
+  }
+  25% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  31.25% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  37.5% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  43.75% {
+    background-image: url('../assets/1 (2).jpg'); /* Hold the second image */
+  }
+  50% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  56.25% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  62.5% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  68.75% {
+    background-image: url('../assets/1 (3).jpg'); /* Hold the third image */
+  }
+  75% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  81.25% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  87.5% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  93.75% {
+    background-image: url('../assets/1 (4).jpg'); /* Hold the fourth image */
+  }
+  100% {
+    background-image: url('../assets/1 (5).jpg');
+  }
+}
+
+/* Add even more keyframes for the smoothest transitions */
+@keyframes slideBackground {
+  0% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  3.125% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  6.25% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  9.375% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  12.5% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  15.625% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  18.75% {
+    background-image: url('../assets/1 (1).jpg');
+  }
+  21.875% {
+    background-image: url('../assets/1 (1).jpg'); /* Hold the first image for a bit */
+  }
+  25% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  28.125% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  31.25% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  34.375% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  37.5% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  40.625% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  43.75% {
+    background-image: url('../assets/1 (2).jpg');
+  }
+  46.875% {
+    background-image: url('../assets/1 (2).jpg'); /* Hold the second image */
+  }
+  50% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  53.125% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  56.25% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  59.375% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  62.5% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  65.625% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  68.75% {
+    background-image: url('../assets/1 (3).jpg');
+  }
+  71.875% {
+    background-image: url('../assets/1 (3).jpg'); /* Hold the third image */
+  }
+  75% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  78.125% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  81.25% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  84.375% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  87.5% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  90.625% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  93.75% {
+    background-image: url('../assets/1 (4).jpg');
+  }
+  96.875% {
+    background-image: url('../assets/1 (4).jpg'); /* Hold the fourth image */
+  }
+  100% {
+    background-image: url('../assets/1 (5).jpg');
+  }
+}
+
+/* Text and other elements animation */
+.hero-title, .hero-subtitle, .hero-service, .hero-button {
+  opacity: 0; /* Initially hide the elements */
+  animation: fadeInUp 1s ease forwards; /* Apply the fadeInUp animation */
+}
+
+.hero-title { animation-delay: 0.5s; } /* Delay the title animation */
+.hero-subtitle { animation-delay: 1s; } /* Delay the subtitle animation */
+.hero-services { animation-delay: 1.5s; } /* Delay the services animation */
+.hero-button { animation-delay: 2s; } /* Delay the button animation */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add a subtle hover effect to the services */
+.hero-service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Add a glowing effect to the button */
+.hero-button {
+  position: relative; /* Add this for positioning the pseudo-element */
+}
+
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #a78bfa, #b39ddb);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1; /* Place the pseudo-element behind the button */
+}
+
+.hero-button:hover::before {
+  opacity: 1;
+}
+
+/* Add a subtle pulse animation to the title */
+.hero-title {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Add a subtle floating animation to the services */
+.hero-service {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
     transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.2);
   }
-  
-  .hero-service i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    color: #A3B8FA;
+}
+
+/* Add a subtle shadow animation to the button */
+.hero-button {
+  animation: shadowPulse 4s ease-in-out infinite;
+}
+
+@keyframes shadowPulse {
+  0%, 100% {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   }
-  
-  .hero-service h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  50% {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
   }
-  
-  .hero-service p {
-    font-size: 0.8rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    color: #ddd;
+}
+
+/* Add a subtle background color change animation to the section */
+.hero-section::before {
+  animation: backgroundPulse 8s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+  0%, 100% {
+    background-color: rgba(0, 0, 0, 0.4);
   }
-  
-  .hero-button {
-    background-color: #A3B8FA;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    cursor: pointer;
-    border: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  50% {
+    background-color: rgba(0, 0, 0, 0.5);
   }
-  
-  .hero-button:hover {
-    background-color: #8799E2;
-    transform: translateY(-3px);
-  }
-  
-  /* Animations */
-  @keyframes fadeInTitle {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInSubtitle {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeInServices {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2.5rem;
-    }
-  
-    .hero-subtitle {
-      font-size: 1rem;
-    }
-  
-    .hero-service {
-      width: 100px;
-      height: 100px;
-      margin: 0.5rem;
-    }
-    .hero-service h3 {
-      font-size: 1rem;
-    }
-    .hero-service p {
-      font-size: 0.7rem;
-    }
-    .hero-button {
-      font-size: 1rem;
-      padding: 0.8rem 1.5rem;
-    }
-  }
+}
